@@ -34,9 +34,9 @@ Automated species recognition from photographs is a key bottleneck in large-scal
 | Epochs to convergence | 9 (early stopping) |
 | Per-class F1 | 1.00 for all 5 species |
 
-![Training curves](outputs/training_curves.png)
+![Training curves](assets/training_curves.png)
 
-![Confusion matrix](outputs/confusion_matrix.png)
+![Confusion matrix](assets/confusion_matrix.png)
 
 > **Note on scale**: The 100-image-per-class dataset is an intentional proof-of-concept. The high validation accuracy reflects the visual distinctiveness of these five species rather than general robustness; production deployment would require ≥1,000 images per class, a held-out test set, and evaluation on out-of-distribution field imagery.
 
@@ -73,18 +73,24 @@ species-image-classifier/
 ├── evaluate.py             # Per-class metrics and confusion matrix
 ├── plot_results.py         # Training curve visualisation
 ├── requirements.txt
+├── assets/                 # Figures committed to the repo
+│   ├── training_curves.png
+│   └── confusion_matrix.png
 ├── src/
 │   ├── dataset.py          # DataLoader, augmentation, train/val split
 │   ├── model.py            # EfficientNet-B0 with replaceable classification head
 │   ├── train.py            # Training loop, early stopping, LR scheduling, checkpointing
 │   └── predict.py          # Inference on single image or folder
-├── data/raw/               # Downloaded images (gitignored)
+├── data/raw/               # ⬇ created locally by download_data.py (gitignored, ~500 imgs)
 │   ├── Posidonia_oceanica/
 │   ├── Cymodocea_nodosa/
 │   ├── Caulerpa_cylindracea/
 │   ├── Paracentrotus_lividus/
 │   └── Octopus_vulgaris/
-└── outputs/                # Checkpoints, history.json, figures (gitignored)
+└── outputs/                # ⬇ created locally during training (gitignored)
+    ├── best_model.pt
+    ├── classes.json
+    └── history.json
 ```
 
 ## Limitations and next steps
