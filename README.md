@@ -14,7 +14,6 @@ Automated species recognition from photographs is a key bottleneck in large-scal
 | *Cymodocea nodosa* | 130222 | Coastal seagrass; coloniser of disturbed sandy beds |
 | *Caulerpa cylindracea* | 128823 | Invasive green alga; priority monitoring species across Mediterranean MPAs |
 | *Paracentrotus lividus* | 48032 | Sea urchin; benthic biodiversity indicator, interacts directly with seagrass beds |
-| *Octopus vulgaris* | 49315 | Common octopus; commercially important, habitat-generalist indicator |
 
 ## Model
 
@@ -32,7 +31,7 @@ Automated species recognition from photographs is a key bottleneck in large-scal
 | Head-only warmup accuracy | 92% (10 epochs) |
 | Training images | 400 (80/20 split from 500 research-grade iNaturalist observations) |
 | Epochs to convergence | 9 (early stopping) |
-| Per-class F1 | 1.00 for all 5 species |
+| Per-class F1 | 1.00 for all 4 species |
 
 ![Training curves](assets/training_curves.png)
 
@@ -86,7 +85,6 @@ species-image-classifier/
 │   ├── Cymodocea_nodosa/
 │   ├── Caulerpa_cylindracea/
 │   ├── Paracentrotus_lividus/
-│   └── Octopus_vulgaris/
 └── outputs/                # ⬇ created locally during training (gitignored)
     ├── best_model.pt
     ├── classes.json
